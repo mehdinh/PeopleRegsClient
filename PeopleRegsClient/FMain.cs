@@ -248,7 +248,7 @@ namespace PeopleRegsClient
             using (var context = new MainContext())
             {
                 var databaseName = context.Database.Connection.Database;
-                var sqlCommand = @"BACKUP DATABASE [{0}] TO DISK = N'{1}' WITH NOINIT";
+                var sqlCommand = @"BACKUP DATABASE [{0}] TO DISK = N'{1}' WITH INIT";
 
                 context.Database.ExecuteSqlCommand(TransactionalBehavior.DoNotEnsureTransaction,
                     string.Format(sqlCommand, databaseName, fileName));                
