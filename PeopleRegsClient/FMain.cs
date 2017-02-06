@@ -177,6 +177,11 @@ namespace PeopleRegsClient
             dataGridView.Columns["VotingRegistrationCityName"].Visible = false;
             dataGridView.ResumeLayout();
 
+            showCounts();
+        }
+
+        private void showCounts()
+        {
             if (filteredData.Count() == 1)
             {
                 infoToolStripStatusLabel.Text = "Prikazan 1 upis";
@@ -184,6 +189,15 @@ namespace PeopleRegsClient
             else
             {
                 infoToolStripStatusLabel.Text = "Prikazano " + filteredData.Count().ToString() + " upisa";
+            }
+
+            if (dataGridView.SelectedRows.Count == 1)
+            {
+                infoToolStripStatusLabel.Text += ", selektovan 1 upis";
+            }
+            else
+            {
+                infoToolStripStatusLabel.Text += ", selektovano " + dataGridView.SelectedRows.Count.ToString() + " upisa";
             }
         }
 
@@ -245,13 +259,47 @@ namespace PeopleRegsClient
 
         private void backupDatabase(string fileName)
         {
-            using (var context = new MainContext())
+            try
             {
-                var databaseName = context.Database.Connection.Database;
-                var sqlCommand = @"BACKUP DATABASE [{0}] TO DISK = N'{1}' WITH INIT";
+                using (var context = new MainContext())
+                {
+                    var databaseName = context.Database.Connection.Database;
+                    var sqlCommand = @"BACKUP DATABASE [{0}] TO DISK = N'{1}' WITH INIT";
 
-                context.Database.ExecuteSqlCommand(TransactionalBehavior.DoNotEnsureTransaction,
-                    string.Format(sqlCommand, databaseName, fileName));                
+                    context.Database.ExecuteSqlCommand(TransactionalBehavior.DoNotEnsureTransaction,
+                        string.Format(sqlCommand, databaseName, fileName));
+                }
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+        }
+
+        private void restoreDatabase(string fileName)
+        {
+            if (MessageBox.Show("Da li ste sigurni da želite da prepišete podatke sa rezervne kopije (podaci u bazi će biti prepisani)?", "", MessageBoxButtons.YesNo) == DialogResult.No)
+            {
+                return;
+            }
+
+            try
+            {
+                using (var context = new MainContext())
+                {
+                    var databaseName = context.Database.Connection.Database;
+                    var sqlCommand = @"
+                    USE master; 
+                    ALTER DATABASE [{0}] SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+                    RESTORE DATABASE [{0}] FROM DISK = N'{1}' WITH REPLACE";
+
+                    context.Database.ExecuteSqlCommand(TransactionalBehavior.DoNotEnsureTransaction,
+                        string.Format(sqlCommand, databaseName, fileName));
+                }
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
             }
         }
 
@@ -370,6 +418,11 @@ namespace PeopleRegsClient
 
         }
 
+        private void dataGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            showCounts();
+        }
+
         private void filterEdit_FilterChanged(object sender, EventArgs e)
         {
             if (data != null)
@@ -454,6 +507,16 @@ namespace PeopleRegsClient
             if (backupSaveFileDialog.FileName != "")
             {
                 backupDatabase(backupSaveFileDialog.FileName);
+            }
+        }
+
+        private void toolsRestoreToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            backupOpenFileDialog.ShowDialog();
+            if (backupOpenFileDialog.FileName != "")
+            {
+                restoreDatabase(backupOpenFileDialog.FileName);
+                toolsRefreshListToolStripMenuItem_Click(toolsRefreshListToolStripMenuItem, new EventArgs());                
             }
         }
 

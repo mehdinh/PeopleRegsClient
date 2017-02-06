@@ -239,14 +239,14 @@
   <data name="syncToolStripButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGLSURBVDhPjVI9awJBEL0yyY8JIf9EsBBvVbCwsPA/2NkK
-        JpxFQAiIvdhFjsOvCJ4WxngkxEASckW8NIpBRScze3urpzH44MHOm4/dmVllF01VvUTmW6HQ810gsCDW
-        GXtqMabVw+ELEbaPTiJxhkE3SPiPVLwZDJ6KNBeU3FDV2l8JB2j4iqCwd3MnmZRnM5Xy+QQ1nkw9+xyR
-        CNi6DuvVSmqwXoNdrXLfdiyfCR/YljgqFsGDp3l4ub2VGhHbvlZo2p7wmMnAj/MNs/EYPrtdGWj3ejBz
-        HJjattQELYXWRMZrqSTuARgPBmCoqgw0kI5l8VZGhQK043Gu64zNZYHFdCrSXbyVy7LAe6UiVBdfprkp
-        ID4JzCcT4d7AymbByuWEtcFqufSKD2mFGhkPOKBj8XHf5gVwATmFVkFGLRyGejoNfdxCH+dxiKaWBz0W
-        c18QjZ57f8G3ymPYZOyKJxPoW6Jo7AYdYoMxHV9xItJdUJFjXkI37yVvg2ZCPwyDLVoTEc9DGpjsWUJR
-        fgHpZmVfmk9RvwAAAABJRU5ErkJggg==
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGLSURBVDhPjVI9awJBEL0yyY8JIb/EwkK8VcHCwsL/YGcr
+        mHAWASEg9mIV5Dj8iuBpYYxHQgwkIVfES6MYVHQys7e3ehqDDx7svPnYnZlVdtFU1UtkvhUKPd8FAgti
+        nbGnFmNaPRy+EGH76CQSZxh0g4T/SMWbweCpSHNByQ1Vrf2VcICGrwgKezd3kkl5NlMpn09Q48nUs88R
+        iYCt67BeraQG6zXY1Sr3bcfymfCBbYmjYhE8eJqHl9tbqRGx7WuFpu0Jj5kM/DjfMBuP4bPblYF2rwcz
+        x4GpbUtN0FJoTWS8lkriHoDxYACGqspAA+lYFm9lVChAOx7nus7YXBZYTKci3cVbuSwLvFcqQnXxZZqb
+        AuKTwHwyEe4NrGwWrFxOWBuslkuv+JBWqJHxgAM6Fh/3bV4AF5BTaBVk1MJhqKfT0Mct9HEeh2hqedBj
+        MfcF0ei59xd8qzyGTcaueDKBviWKxm7QITYY0/EVJyLdBRU55iV0817yNmgm9MMw2KI1EfE8pIHJniUU
+        5RfE32VT6hNFPQAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="exportToolStripButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -281,12 +281,12 @@
   <data name="refreshListToolStripButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAE+SURBVDhPzZK9SsRAFIUTi/WH9R0URPE5hBDIf5iAXYpF
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAE+SURBVDhPzZK9SsRAFIUTi/WH9R0URPE5JBDIf5iAXYpF
         sLAQFGyE+AgWFmIp2AiLwiIIvolisWAjiz7AsrB+E252kjVb64HDTM6599zJJNZfwZa1FXaSJAoO4jge
         wg/4EkVRL8/zFfZ3eKdS20QYhusUPFMwXcBvvVJzLi0N2LXmEfujIAi2mLzB/sBxnIl47QEY+thTz/M+
         adwU2SqKYgm9XzVrLgoYiHkoUoksy7rol5zkqsY9sQ1oHOqA+vR5KKVWqdmHoUgGBPgYynXdZZF+gUve
         0UPgm0gGiC4h1xX1UX3fXxO7BDXHEtAXyQDxQszqom6RZz8Mz9u83pf2CA9ENqgHMHlMUU9/Rhp30zQ9
-        QS//AfgoLU1gVAEjWdv4MP9aM2CewRs+W4epOXzi0t45ySv6PfSk9F/Bsn4ATpqvUKsnp1IAAAAASUVO
+        QS//AfgoLU1gVAEjWdv4MP9aM2CewRs+W4epOXzi0t45ySv6PfSk9F/Bsn4ARfSvTckbFxcAAAAASUVO
         RK5CYII=
 </value>
   </data>
@@ -298,6 +298,9 @@
   </metadata>
   <metadata name="backupSaveFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>748, 17</value>
+  </metadata>
+  <metadata name="backupOpenFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>918, 17</value>
   </metadata>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

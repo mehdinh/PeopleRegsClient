@@ -47,6 +47,8 @@
             this.toolsExportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsExportSelectedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolsBackupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
             this.toolsRefreshListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewShowFilterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -91,8 +93,8 @@
             this.loadingLabel = new System.Windows.Forms.Label();
             this.exportSaveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.backupSaveFileDialog = new System.Windows.Forms.SaveFileDialog();
-            this.toolsBackupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolsRestoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.backupOpenFileDialog = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.menuStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
@@ -117,6 +119,7 @@
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView.Size = new System.Drawing.Size(760, 591);
             this.dataGridView.TabIndex = 0;
+            this.dataGridView.SelectionChanged += new System.EventHandler(this.dataGridView_SelectionChanged);
             this.dataGridView.DoubleClick += new System.EventHandler(this.fileOpenToolStripMenuItem_Click);
             // 
             // dataSyncTimer
@@ -209,6 +212,7 @@
             this.toolsExportSelectedToolStripMenuItem,
             this.toolStripSeparator7,
             this.toolsBackupToolStripMenuItem,
+            this.toolsRestoreToolStripMenuItem,
             this.toolStripSeparator9,
             this.toolsRefreshListToolStripMenuItem});
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
@@ -251,6 +255,18 @@
             // 
             this.toolStripSeparator7.Name = "toolStripSeparator7";
             this.toolStripSeparator7.Size = new System.Drawing.Size(337, 6);
+            // 
+            // toolsBackupToolStripMenuItem
+            // 
+            this.toolsBackupToolStripMenuItem.Name = "toolsBackupToolStripMenuItem";
+            this.toolsBackupToolStripMenuItem.Size = new System.Drawing.Size(340, 22);
+            this.toolsBackupToolStripMenuItem.Text = "Kreiraj rezervnu kopiju podataka";
+            this.toolsBackupToolStripMenuItem.Click += new System.EventHandler(this.toolsBackupToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator9
+            // 
+            this.toolStripSeparator9.Name = "toolStripSeparator9";
+            this.toolStripSeparator9.Size = new System.Drawing.Size(337, 6);
             // 
             // toolsRefreshListToolStripMenuItem
             // 
@@ -702,20 +718,20 @@
             // 
             // backupSaveFileDialog
             // 
-            this.backupSaveFileDialog.DefaultExt = "csv";
+            this.backupSaveFileDialog.DefaultExt = "bak";
             this.backupSaveFileDialog.Filter = "BAK Datoteke|*.bak";
             // 
-            // toolsBackupToolStripMenuItem
+            // toolsRestoreToolStripMenuItem
             // 
-            this.toolsBackupToolStripMenuItem.Name = "toolsBackupToolStripMenuItem";
-            this.toolsBackupToolStripMenuItem.Size = new System.Drawing.Size(340, 22);
-            this.toolsBackupToolStripMenuItem.Text = "Kreiraj rezervnu kopiju podataka";
-            this.toolsBackupToolStripMenuItem.Click += new System.EventHandler(this.toolsBackupToolStripMenuItem_Click);
+            this.toolsRestoreToolStripMenuItem.Name = "toolsRestoreToolStripMenuItem";
+            this.toolsRestoreToolStripMenuItem.Size = new System.Drawing.Size(340, 22);
+            this.toolsRestoreToolStripMenuItem.Text = "Učitaj iz rezervne kopije podataka";
+            this.toolsRestoreToolStripMenuItem.Click += new System.EventHandler(this.toolsRestoreToolStripMenuItem_Click);
             // 
-            // toolStripSeparator9
+            // backupOpenFileDialog
             // 
-            this.toolStripSeparator9.Name = "toolStripSeparator9";
-            this.toolStripSeparator9.Size = new System.Drawing.Size(337, 6);
+            this.backupOpenFileDialog.DefaultExt = "bak";
+            this.backupOpenFileDialog.Filter = "BAK Datoteke|*.bak";
             // 
             // FMain
             // 
@@ -816,6 +832,8 @@
         private System.Windows.Forms.SaveFileDialog backupSaveFileDialog;
         private System.Windows.Forms.ToolStripMenuItem toolsBackupToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
+        private System.Windows.Forms.ToolStripMenuItem toolsRestoreToolStripMenuItem;
+        private System.Windows.Forms.OpenFileDialog backupOpenFileDialog;
     }
 }
 
