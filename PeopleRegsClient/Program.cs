@@ -18,5 +18,7 @@ namespace PeopleRegsClient
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FMain());
         }
+
+        // Just added to test GIT integration
     }
 }
